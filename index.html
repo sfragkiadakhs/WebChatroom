@@ -45,7 +45,7 @@
 	<script src="js/jquery-1.10.1.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		var socket = io.connect('https://10.14.0.233:1200');
+		var socket = io.connect(window.location.protocol + '//' + window.location.host);
 		/***************** chat with username and messages ****************/
 		// The username is requested, sent to the server and displayed in the title
 		var username = prompt('What\'s your username?');

@@ -13,8 +13,8 @@ var options = {
 	NPNProtocols: ['http/2.0', 'spdy', 'http/1.1', 'http/1.0'],
 };
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 1200
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '10.14.0.233'
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 1200
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 var myApp = https.createServer(options, handleRequest);
 
