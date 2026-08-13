@@ -31,6 +31,11 @@ A real-time web chatroom application built with Node.js, Socket.IO, and WebRTC f
    - `key.pem` - Private key
    - `cert.pem` - Certificate
 
+   To generate a self-signed pair for local development:
+   ```bash
+   openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/CN=localhost"
+   ```
+
 4. Start the server:
    ```bash
    npm start
@@ -43,7 +48,7 @@ A real-time web chatroom application built with Node.js, Socket.IO, and WebRTC f
 You can set the following environment variables:
 
 - `PORT` - Server port (default: 1200)
-- `OPENSHIFT_NODEJS_IP` - Server IP address (default: 10.14.0.233 for local development)
+- `OPENSHIFT_NODEJS_IP` - Server IP address (default: `0.0.0.0`)
 
 ## Technologies Used
 
